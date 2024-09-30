@@ -13,8 +13,7 @@ limiter = Limiter(
     storage_options={"socket_connect_timeout": 30},
     strategy="fixed-window"
 )
-SECRET_PASSKEY=os.environ['SECRET_PASSKEY']
-
+SECRET_PASSKEY=int(os.environ['SECRET_PASSKEY'])
 
 @app.route('/', methods=['GET'])
 def home_get():
