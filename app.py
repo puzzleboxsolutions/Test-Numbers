@@ -24,7 +24,7 @@ def home_get():
     return render_template('index.html')
 
 @app.route('/', methods=['POST'])
-@limiter.limit("5 per minute")
+@limiter.limit("1 per minute")
 def home_post():  
     print(request.form)
 
@@ -52,7 +52,7 @@ def easter_get():
     return render_template('easter.html')
 
 @app.route('/easter', methods=['POST'])
-@limiter.limit("5 per minute")
+@limiter.limit("3 per minute")
 def easter_post():  
     print(request.form)
     success_message = "Congratulations!! submit the key to https://forms.gle/mT7vjPFx5su8CVx28"    
